@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.h-font {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-size: calc(1.9rem + 0.2vw);
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: calc(2.1rem + 0.2vw);
+  }
+}
+
+h2 {
+  font-size: calc(1.6rem + 0.2vw);
+}
+@media (min-width: 768px) {
+  h2 {
+    font-size: calc(1.8rem + 0.2vw);
+  }
+}
+
+h3 {
+  font-size: calc(1.4rem + 0.2vw);
+}
+@media (min-width: 768px) {
+  h3 {
+    font-size: calc(1.6rem + 0.2vw);
+  }
+}
+
+h4 {
+  font-size: calc(1.2rem + 0.2vw);
+}
+@media (min-width: 768px) {
+  h4 {
+    font-size: calc(1.4rem + 0.2vw);
+  }
+}
+
+h5 {
+  font-size: calc(1.1rem + 0.2vw);
+}
+@media (min-width: 768px) {
+  h5 {
+    font-size: calc(1.2rem + 0.2vw);
+  }
+}
+
+h6 {
+  font-size: calc(0.9rem + 0.2vw);
+}
+@media (min-width: 768px) {
+  h6 {
+    font-size: calc(1rem + 0.2vw);
+  }
+}/*# sourceMappingURL=App.css.map */
