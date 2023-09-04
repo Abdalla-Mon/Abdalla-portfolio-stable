@@ -11,17 +11,17 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Close } from "@mui/icons-material";
 import Toolbar from "@mui/material/Toolbar";
 
-import { NavLink } from "react-router-dom";
-import { AppProvider } from "../../App";
+import { NavLink, useNavigate } from "react-router-dom";
+import { RouteProvider } from "../../App";
 
 const drawerWidth = 240;
 const navItems = ["home", "portfolio", "about", "contact"];
-
+let w = window;
 export default function Navbar() {
   return <DrawerAppBar />;
 }
 function DrawerAppBar(props) {
-  const { index, setIndex } = React.useContext(AppProvider);
+  const navigate = useNavigate();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -62,12 +62,15 @@ function DrawerAppBar(props) {
       <Divider />
 
       <ul className="flex flex-col gap-2 navbar-ul drawer-ul">
-        {navItems.map((item, ind) => {
+        {navItems.map((item) => {
           return (
             <a
+              id={item + "mob"}
+              className={item === "home" ? "active mob-links" : "mob-links"}
               onClick={() => {
                 handleDrawerToggle();
-                setIndex(ind);
+
+                navig(item === "home" ? "" : item, item + "mob", "mob-links");
               }}
               key={item}
               to={item === "home" ? "" : item}
@@ -79,10 +82,20 @@ function DrawerAppBar(props) {
       </ul>
     </Box>
   );
-
+  function navig(e, id, className) {
+    setAnimation(true);
+    w.setTimeout(() => {
+      navigate(e);
+      setAnimation(false);
+    }, 800);
+    document.querySelectorAll("." + className).forEach((el) => {
+      el.classList.remove("active");
+    });
+    document.querySelector("#" + id).classList.add("active");
+  }
   const container =
     window !== undefined ? () => window().document.body : undefined;
-
+  const { animation, setAnimation } = React.useContext(RouteProvider);
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -104,21 +117,27 @@ function DrawerAppBar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <div className="navbar-logo flex items-center">
+          <div
+            className="navbar-logo flex items-center"
+            onClick={() => {
+              navig("");
+            }}
+          >
             <div className="img-container mr-2">
               <img src="./landing-imgs/face-port-1.png" />
             </div>{" "}
             <h3>Abdalla</h3>
           </div>
           <ul className="hidden tab:flex gap-6 navbar-ul pr-2 ">
-            {navItems.map((item, ind) => {
+            {navItems.map((item) => {
               return (
                 <a
                   key={item}
-                  to={item === "home" ? "" : item}
+                  // to={item === "home" ? "" : item}
+                  id={item + "pc"}
+                  className={item === "home" ? "active pc-links" : "pc-links"}
                   onClick={() => {
-                    setIndex(ind);
-                    console.log(ind);
+                    navig(item === "home" ? "" : item, item + "pc", "pc-links");
                   }}
                 >
                   {item}

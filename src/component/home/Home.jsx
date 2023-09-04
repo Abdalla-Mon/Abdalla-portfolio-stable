@@ -1,38 +1,31 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  useMotionValue,
-  useTransform,
-  motion,
-  useScroll,
-  AnimatePresence,
-} from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { useTransform, motion, useScroll } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
+import { RouteProvider } from "../../App";
+import { useContext } from "react";
 export default function Home() {
+  const { animation, setAnimation } = useContext(RouteProvider);
   return (
-    <AnimatePresence>
-      <motion.section
-        className="home"
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, x: 0, scale: 1 }}
-        transition={{ duration: 0.5 }}
-        exit={{ x: "-100%" }}
-      >
-        <div className="container mx-auto">
-          <div className="home-content">
-            <div className="text">
-              <Text />
-            </div>
-            <div className="img-container">
-              <div className="img-wrapper flex justify-center">
-                <img src="./landing-imgs/port-img.png" alt="Abdalla's photo" />
-              </div>
+    <motion.section
+      className="home"
+      // initial={{  }}              animate={{ x: ["-100vw", "0vw", "100vw"] }}
+      initial={{ scale: 0 }}
+      animate={animation ? { x: "100vw" } : { scale: [0, 1] }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="container mx-auto">
+        <div className="home-content">
+          <div className="text">
+            <Text />
+          </div>
+          <div className="img-container">
+            <div className="img-wrapper flex justify-center">
+              <img src="./landing-imgs/port-img.png" alt="Abdalla's photo" />
             </div>
           </div>
         </div>
-      </motion.section>
-    </AnimatePresence>
+      </div>
+    </motion.section>
   );
 }
 function Text() {

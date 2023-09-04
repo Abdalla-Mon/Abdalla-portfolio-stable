@@ -1,0 +1,214 @@
+@use "../varibales/varibales" as *;
+.portfolio {
+  padding: 60px 15px;
+  overflow: hidden;
+
+  @media (max-width: 767px) {
+    padding: 60px 40px;
+  }
+  @media (max-width: 576px) {
+    padding: 60px 15px;
+  }
+  h4 {
+    color: $primary-color;
+  }
+  h1 {
+    margin: 0 0 40px !important;
+    font-weight: bold;
+    font-size: 2.2rem;
+  }
+  h5 {
+    font-size: 0.8rem;
+    margin-top: 20px;
+    font-weight: bold;
+    color: $primary-color;
+  }
+  h3 {
+    font-weight: bold;
+    color: $heading-color;
+    font-size: calc(1.7rem + 0.1vw) !important;
+  }
+  p {
+    color: $body-color;
+  }
+  .card {
+    padding: 25px;
+    background: $gradiant-color;
+    box-shadow: $box-shadow, $box-shadow;
+    cursor: pointer;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+
+    .card-img {
+      overflow: hidden;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+      img {
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+      }
+    }
+
+    &:hover {
+      img {
+        scale: 1.1;
+      }
+    }
+  }
+  .card-popup {
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $gradiant-color;
+    padding: 60px 15px;
+    @media (max-width: 991px) {
+      padding: 40px 15px;
+    }
+    @media (max-width: 767px) {
+      padding: 25px 15px;
+    }
+  }
+  .popup-left {
+    display: flex;
+  }
+  .popup-img {
+    padding: 12px;
+    height: fit-content;
+    margin: auto;
+    width: fit-content;
+
+    background-image: linear-gradient(
+      62deg,
+      $primary-color 0%,
+      $heading-color 100%
+    );
+
+    img {
+      max-width: 600px;
+      width: 100%;
+      border-radius: 8px;
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      -ms-border-radius: 8px;
+      -o-border-radius: 8px;
+    }
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+  .popup-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .popup-content {
+    position: relative;
+    padding: 60px;
+    @media (max-width: 991px) {
+      padding: 45px;
+    }
+    @media (max-width: 767px) {
+      padding: 30px;
+    }
+    @media (max-width: 400px) {
+      padding: 20px;
+    }
+    background: $gradiant-color;
+    box-shadow: $box-shadow, $box-shadow;
+
+    border-radius: 6px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    uL {
+      margin: 12px 0;
+    }
+    li {
+      color: $subtitle-color;
+      text-transform: capitalize;
+    }
+    a {
+      display: block;
+      padding: 12px 20px;
+      @media (max-width: 576px) {
+        padding: 12px 16px;
+      }
+      &:hover {
+        background: $hover-gradiant-color;
+
+        color: $secondary-color;
+
+        transform: translateY(-10px);
+        -webkit-transform: translateY(-10px);
+        -moz-transform: translateY(-10px);
+        -ms-transform: translateY(-10px);
+        -o-transform: translateY(-10px);
+      }
+      transition: 0.3s;
+      -webkit-transition: 0.3s;
+      -moz-transition: 0.3s;
+      -ms-transition: 0.3s;
+      -o-transition: 0.3s;
+      background: $gradiant-color;
+      border-radius: 10px;
+      box-shadow: $box-shadow;
+      color: $subtitle-color;
+    }
+  }
+  .popup-close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    @media (max-width: 767px) {
+      right: 0;
+      top: 0;
+    }
+    width: 40px;
+    height: 40px;
+    box-shadow: $box-shadow, $box-shadow;
+    background: $gradiant-color;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    svg {
+      color: $primary-color;
+    }
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    &:hover {
+      background: $hover-gradiant-color;
+      svg {
+        color: $secondary-color;
+      }
+    }
+  }
+}

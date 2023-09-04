@@ -17,6 +17,7 @@
 .navbar-ul {
   a {
     text-transform: capitalize;
+    cursor: pointer;
     color: $body-color;
     font-size: calc(0.9rem + 0.1vw);
     &.active {

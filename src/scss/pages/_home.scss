@@ -115,7 +115,7 @@
       &:hover {
         background: $hover-gradiant-color;
         svg {
-          color: white;
+          color: $secondary-color;
         }
         transform: translateY(-10px);
         -webkit-transform: translateY(-10px);

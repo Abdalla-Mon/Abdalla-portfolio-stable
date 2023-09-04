@@ -7,51 +7,56 @@ import {
 } from "react-router-dom";
 import Home from "./component/home/Home";
 import Navbar from "./component/router/Navbar";
-import { AnimatePresence, motion } from "framer-motion";
-import { createContext, useState } from "react";
+import About from "./component/about/About";
+import { useEffect, useState } from "react";
+import Portfolio from "./component/portfolio/Portfolio";
+import { motion } from "framer-motion";
+import { createContext } from "react";
+export const RouteProvider = createContext(false);
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<Routes />}>
       <Route path="" element={<Home />} />
+      <Route path="/portfolio" element={<Portfolio />} />
+      <Route path="/about" element={<About />} />
     </Route>
   )
 );
-export const AppProvider = createContext();
 function App() {
-  // return <RouterProvider router={router} />;
-  const [index, setIndex] = useState(0);
-  const arr = [<Home />, <p>p</p>, <About />];
-  return (
-    <AppProvider.Provider value={{ index, setIndex }}>
-      <Navbar />
-      <AnimatePresence>{arr[index]}</AnimatePresence>;
-    </AppProvider.Provider>
-  );
+  return <RouterProvider router={router} />;
 }
 function Routes() {
+  const [loader, setLoader] = useState(true);
+  const [animation, setAnimation] = useState(false);
+  useEffect(() => {
+    setLoader(false);
+  }, []);
   return (
-    <>
-      <Navbar />
-      <Outlet />
-    </>
-  );
-}
-function About() {
-  return (
-    <motion.div
-      initial={{ height: "0", overflow: "hidden" }}
-      animate={{ height: [0, 200, 500] }}
-      transition={{ duration: 0.5 }}
-      exit={{ x: "100%" }}
-      className="about  bg-slate-500"
-    >
-      <h1> About me</h1>
-      <h1> About me</h1>
-      <h1> About me</h1>
-      <h1> About me</h1>
-      <h1> About me</h1>
-      <h1> About me</h1>
-    </motion.div>
+    <RouteProvider.Provider value={{ animation, setAnimation }}>
+      {loader ? <p>loading</p> : null}
+      {!loader ? (
+        <>
+          <Navbar />
+          {animation ? (
+            <motion.div
+              // animate={{ x: ["-100vw", "0vw"], scale: [1, 0] }}
+              animate={{ width: ["0vw", "100vw"], scale: [1, 0] }}
+              transition={{
+                width: {
+                  duration: 0.4,
+                },
+                scale: {
+                  duration: 0.4,
+                  delay: 0.4,
+                },
+              }}
+              className="wrapper fixed"
+            ></motion.div>
+          ) : null}
+          <Outlet />
+        </>
+      ) : null}
+    </RouteProvider.Provider>
   );
 }
 

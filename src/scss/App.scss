@@ -5,9 +5,10 @@
 body {
   margin: 0;
   font-family: "Poppins", sans-serif !important;
-  background-color: $background-color !important;
   padding-top: 65px;
   color: $body-color;
+  overflow-x: hidden;
+  background-color: $background-color !important;
 }
 p {
   line-height: 1.6;
