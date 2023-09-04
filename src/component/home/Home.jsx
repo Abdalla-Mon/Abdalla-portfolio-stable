@@ -1,24 +1,38 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useMotionValue, useTransform, motion, useScroll } from "framer-motion";
+import {
+  useMotionValue,
+  useTransform,
+  motion,
+  useScroll,
+  AnimatePresence,
+} from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
 export default function Home() {
   return (
-    <section className="home">
-      <div className="container mx-auto">
-        <div className="home-content">
-          <div className="text">
-            <Text />
-          </div>
-          <div className="img-container">
-            <div className="img-wrapper flex justify-center">
-              <img src="./landing-imgs/port-img.png" alt="Abdalla's photo" />
+    <AnimatePresence>
+      <motion.section
+        className="home"
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, x: 0, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        exit={{ x: "-100%" }}
+      >
+        <div className="container mx-auto">
+          <div className="home-content">
+            <div className="text">
+              <Text />
+            </div>
+            <div className="img-container">
+              <div className="img-wrapper flex justify-center">
+                <img src="./landing-imgs/port-img.png" alt="Abdalla's photo" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </motion.section>
+    </AnimatePresence>
   );
 }
 function Text() {

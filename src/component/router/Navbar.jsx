@@ -12,6 +12,7 @@ import { Close } from "@mui/icons-material";
 import Toolbar from "@mui/material/Toolbar";
 
 import { NavLink } from "react-router-dom";
+import { AppProvider } from "../../App";
 
 const drawerWidth = 240;
 const navItems = ["home", "portfolio", "about", "contact"];
@@ -20,6 +21,7 @@ export default function Navbar() {
   return <DrawerAppBar />;
 }
 function DrawerAppBar(props) {
+  const { index, setIndex } = React.useContext(AppProvider);
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -60,15 +62,18 @@ function DrawerAppBar(props) {
       <Divider />
 
       <ul className="flex flex-col gap-2 navbar-ul drawer-ul">
-        {navItems.map((item) => {
+        {navItems.map((item, ind) => {
           return (
-            <NavLink
-              onClick={handleDrawerToggle}
+            <a
+              onClick={() => {
+                handleDrawerToggle();
+                setIndex(ind);
+              }}
               key={item}
               to={item === "home" ? "" : item}
             >
               {item}
-            </NavLink>
+            </a>
           );
         })}
       </ul>
@@ -106,11 +111,18 @@ function DrawerAppBar(props) {
             <h3>Abdalla</h3>
           </div>
           <ul className="hidden tab:flex gap-6 navbar-ul pr-2 ">
-            {navItems.map((item) => {
+            {navItems.map((item, ind) => {
               return (
-                <NavLink key={item} to={item === "home" ? "" : item}>
+                <a
+                  key={item}
+                  to={item === "home" ? "" : item}
+                  onClick={() => {
+                    setIndex(ind);
+                    console.log(ind);
+                  }}
+                >
                   {item}
-                </NavLink>
+                </a>
               );
             })}
           </ul>
