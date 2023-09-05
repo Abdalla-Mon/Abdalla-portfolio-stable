@@ -57,6 +57,12 @@ function Text() {
       <p>
         Junior front-end developer available for freelance and corporate work
       </p>
+      <a
+        className="cv"
+        href="https://drive.google.com/file/d/1m43lpRdq8YF1IhkR2pBIN-jiGePjkAYA/view"
+      >
+        Download My CV
+      </a>
       <div className="flex gap-5 home-icons">
         <a
           className="face-icon "
