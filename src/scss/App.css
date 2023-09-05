@@ -511,6 +511,88 @@
   font-weight: bold;
 }
 
+.about .about-me {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 80px 10px;
+}
+@media (min-width: 767px) {
+  .about .left > div {
+    order: 2;
+  }
+}
+.about .left > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about .about-box {
+  display: flex;
+  gap: 40px;
+}
+@media (max-width: 767px) {
+  .about .about-box {
+    flex-direction: column-reverse;
+  }
+}
+.about .about-box > div {
+  min-height: 200px;
+  text-align: center;
+  background: var(--gradiant-color);
+  box-shadow: var(--box-shadow), var(--box-shadow);
+  padding: 15px 20px;
+  border-radius: 10px;
+}
+.about .about-box > div:last-child {
+  color: red;
+}
+@media (min-width: 768px) {
+  .about .about-box > div {
+    width: 50%;
+  }
+}
+.about .about-box p {
+  color: var(--body-color);
+}
+.about .about-box p:first-child {
+  margin-bottom: 10px;
+}
+.about .about-box h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(2rem + 0.2vw);
+  font-weight: bold;
+  color: transparent;
+  -webkit-text-stroke: 3px var(--heading-color);
+}
+@media (min-width: 768px) {
+  .about .about-box h2 {
+    width: 50%;
+  }
+}
+.about .about-box .skill {
+  color: var(--primary-color);
+  display: inline-block;
+  padding: 12px 16px;
+  background: var(--gradiant-color);
+  margin: 0 15px 15px 0;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.about .about-box h4 {
+  font-size: calc(1.3rem + 0.1vw);
+  font-weight: bold;
+  color: var(--primary-color);
+}
+.about .about-box h5 {
+  font-size: 0.9rem;
+}
+
 .white-bg {
   background-color: var(--background-color) !important;
 }
