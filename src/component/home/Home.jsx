@@ -4,13 +4,19 @@ import { TypeAnimation } from "react-type-animation";
 import { RouteProvider } from "../../App";
 import { useContext } from "react";
 export default function Home() {
-  const { animation, setAnimation } = useContext(RouteProvider);
+  const { animation, state } = useContext(RouteProvider);
   return (
     <motion.section
       className="home"
       // initial={{  }}              animate={{ x: ["-100vw", "0vw", "100vw"] }}
       initial={{ scale: 0 }}
-      animate={animation ? { x: "100vw" } : { scale: [0, 1] }}
+      animate={
+        animation
+          ? state === "left"
+            ? { x: "100vw" }
+            : { x: "-100vw" }
+          : { scale: [0, 1] }
+      }
       transition={{ duration: 0.5 }}
     >
       <div className="container mx-auto">

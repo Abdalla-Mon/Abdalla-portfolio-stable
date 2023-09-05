@@ -2,7 +2,7 @@
 .portfolio {
   padding: 60px 15px;
   overflow: hidden;
-
+  min-height: 100vh;
   @media (max-width: 767px) {
     padding: 60px 40px;
   }

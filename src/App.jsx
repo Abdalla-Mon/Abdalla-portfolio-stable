@@ -12,6 +12,8 @@ import { useEffect, useState } from "react";
 import Portfolio from "./component/portfolio/Portfolio";
 import { motion } from "framer-motion";
 import { createContext } from "react";
+import Contact from "./component/contact/Contact";
+import Footer from "./component/router/Footer";
 export const RouteProvider = createContext(false);
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,6 +21,7 @@ const router = createBrowserRouter(
       <Route path="" element={<Home />} />
       <Route path="/portfolio" element={<Portfolio />} />
       <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
     </Route>
   )
 );
@@ -28,11 +31,16 @@ function App() {
 function Routes() {
   const [loader, setLoader] = useState(true);
   const [animation, setAnimation] = useState(false);
+  const [index, setIndex] = useState(0);
+  const [state, setState] = useState("left");
   useEffect(() => {
     setLoader(false);
   }, []);
+
   return (
-    <RouteProvider.Provider value={{ animation, setAnimation }}>
+    <RouteProvider.Provider
+      value={{ animation, setAnimation, index, setIndex, setState, state }}
+    >
       {loader ? <p>loading</p> : null}
       {!loader ? (
         <>
@@ -40,6 +48,7 @@ function Routes() {
           {animation ? (
             <motion.div
               // animate={{ x: ["-100vw", "0vw"], scale: [1, 0] }}
+              initial={state === "left" ? { left: 0 } : { right: 0 }}
               animate={{ width: ["0vw", "100vw"], scale: [1, 0] }}
               transition={{
                 width: {
@@ -54,6 +63,7 @@ function Routes() {
             ></motion.div>
           ) : null}
           <Outlet />
+          <Footer />
         </>
       ) : null}
     </RouteProvider.Provider>

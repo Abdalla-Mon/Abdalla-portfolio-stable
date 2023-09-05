@@ -5,12 +5,18 @@ export default function About() {
   let arr1 = [-60, -120, -220, -320, -420];
   let arr2 = [-20, 50, 120, 220, 320];
   let arr3 = [120, -50, -120, -170, -220];
-  const { animation, setAnimation } = useContext(RouteProvider);
+  const { animation, state } = useContext(RouteProvider);
 
   return (
     <motion.section
       initial={{ scale: 0 }}
-      animate={animation ? { x: "100vw" } : { scale: [0, 1] }}
+      animate={
+        animation
+          ? state === "left"
+            ? { x: "100vw" }
+            : { x: "-100vw" }
+          : { scale: [0, 1] }
+      }
       transition={{ duration: 0.5 }}
       className="about"
     >

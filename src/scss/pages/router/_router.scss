@@ -1,1 +1,35 @@
+@use "../../varibales/varibales" as *;
 @forward "./navbar";
+
+footer {
+  text-align: center;
+  padding: 60px 10px;
+  box-shadow: 3px 2px 3px 2px $body-color;
+
+  .img-container {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: $heading-color;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    img {
+      margin: 5px 0 0 5px;
+    }
+    margin: auto;
+  }
+
+  h3 {
+    font-size: calc(1.1rem + 0.2vw);
+    font-weight: bold;
+    color: $body-color;
+    margin-bottom: 20px;
+  }
+  p {
+    color: $body-color;
+    span {
+      color: $primary-color;
+    }
+  }
+}

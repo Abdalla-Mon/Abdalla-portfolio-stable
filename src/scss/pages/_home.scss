@@ -1,4 +1,7 @@
 @use "../varibales/varibales" as *;
+.home {
+  min-height: 100vh;
+}
 .home-content {
   display: flex;
   gap: 20px;

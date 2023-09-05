@@ -11,7 +11,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Close } from "@mui/icons-material";
 import Toolbar from "@mui/material/Toolbar";
 
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { RouteProvider } from "../../App";
 
 const drawerWidth = 240;
@@ -28,21 +28,9 @@ function DrawerAppBar(props) {
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
-  const [scrolled, setScrolled] = React.useState(false);
-  // const { scrollY } = useScroll(false);
-  // useMotionValueEvent(scrollY, "change", (latest) => {
-  //   if (latest > 300) {
-  //     setScrolled(true);
-  //   } else {
-  //     setScrolled(false);
-  //   }
-  // });
+
   const drawer = (
-    <Box
-      className="drawer-handle"
-      // onClick={handleDrawerToggle}
-      sx={{ textAlign: "center" }}
-    >
+    <Box className="drawer-handle" sx={{ textAlign: "center" }}>
       <div className="flex drawer-header justify-between items-center">
         <div className="navbar-logo mb-navbar-logo flex items-center">
           <div className="img-container mr-2">
@@ -62,7 +50,7 @@ function DrawerAppBar(props) {
       <Divider />
 
       <ul className="flex flex-col gap-2 navbar-ul drawer-ul">
-        {navItems.map((item) => {
+        {navItems.map((item, ind) => {
           return (
             <a
               id={item + "mob"}
@@ -70,7 +58,12 @@ function DrawerAppBar(props) {
               onClick={() => {
                 handleDrawerToggle();
 
-                navig(item === "home" ? "" : item, item + "mob", "mob-links");
+                navig(
+                  item === "home" ? "" : item,
+                  item + "mob",
+                  "mob-links",
+                  ind
+                );
               }}
               key={item}
               to={item === "home" ? "" : item}
@@ -82,7 +75,13 @@ function DrawerAppBar(props) {
       </ul>
     </Box>
   );
-  function navig(e, id, className) {
+  function navig(e, id, className, i) {
+    if (i > index) {
+      setState("left");
+    } else {
+      setState("right");
+    }
+    setIndex(i);
     setAnimation(true);
     w.setTimeout(() => {
       navigate(e);
@@ -95,16 +94,15 @@ function DrawerAppBar(props) {
   }
   const container =
     window !== undefined ? () => window().document.body : undefined;
-  const { animation, setAnimation } = React.useContext(RouteProvider);
+  const { setAnimation, index, setIndex, setState } =
+    React.useContext(RouteProvider);
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar
-        position={scrolled ? "fixed" : "absolute"}
+        position={"absolute"}
         component="nav"
-        className={
-          scrolled ? "scroled-nav navbar white-bg py-2" : "navbar white-bg"
-        }
+        className={"navbar white-bg"}
       >
         <Toolbar className="toolbar flex justify-between flex-row-reverse tab:flex-row">
           <IconButton
@@ -129,15 +127,19 @@ function DrawerAppBar(props) {
             <h3>Abdalla</h3>
           </div>
           <ul className="hidden tab:flex gap-6 navbar-ul pr-2 ">
-            {navItems.map((item) => {
+            {navItems.map((item, ind) => {
               return (
                 <a
                   key={item}
-                  // to={item === "home" ? "" : item}
                   id={item + "pc"}
                   className={item === "home" ? "active pc-links" : "pc-links"}
                   onClick={() => {
-                    navig(item === "home" ? "" : item, item + "pc", "pc-links");
+                    navig(
+                      item === "home" ? "" : item,
+                      item + "pc",
+                      "pc-links",
+                      ind
+                    );
                   }}
                 >
                   {item}

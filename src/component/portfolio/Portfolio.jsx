@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { RouteProvider } from "../../App";
 
 export default function Portfolio() {
-  const { animation, setAnimation } = useContext(RouteProvider);
+  const { animation, state } = useContext(RouteProvider);
 
   const portArr = [
     {
@@ -50,7 +50,13 @@ export default function Portfolio() {
     <motion.section
       className="portfolio"
       initial={{ scale: 0 }}
-      animate={animation ? { x: "100vw" } : { scale: [0, 1] }}
+      animate={
+        animation
+          ? state === "left"
+            ? { x: "100vw" }
+            : { x: "-100vw" }
+          : { scale: [0, 1] }
+      }
       transition={{ duration: 0.5 }}
     >
       <div className="container mx-auto">
