@@ -1,31 +1,70 @@
-/*
-Example 1:
+let board1 = [
+  ["5", "3", "6", ".", "7", ".", ".", ".", "."],
+  [".", ".", ".", "1", "9", "5", ".", ".", "."],
+  [".", "9", "8", ".", ".", ".", ".", "6", "."],
+  ["8", ".", ".", ".", "6", ".", ".", ".", "3"],
+  ["4", ".", ".", "8", ".", "3", ".", ".", "1"],
+  ["7", ".", ".", ".", "2", ".", ".", ".", "6"],
+  [".", "6", ".", ".", ".", "9", "2", "8", "."],
+  [".", ".", ".", "4", "1", ".", ".", ".", "5"],
+  [".", ".", ".", ".", "8", ".", ".", "7", "9"],
+];
+// Output: true
+// Example 2:
 
-Input: nums = [1,2,3,4]
-Output: [24,12,8,6]
-Example 2:
+let board2 = [
+  ["8", "3", ".", "7", "7", ".", ".", ".", "."],
+  ["6", ".", ".", "1", "9", "5", ".", ".", "."],
+  [".", "9", "8", ".", ".", ".", ".", "6", "."],
+  ["8", ".", ".", ".", "6", ".", ".", ".", "3"],
+  ["4", ".", ".", "8", ".", "3", ".", ".", "1"],
+  ["7", ".", ".", ".", "2", ".", ".", ".", "6"],
+  [".", "6", ".", ".", ".", ".", "2", "8", "."],
+  [".", ".", ".", "4", "1", "9", ".", ".", "5"],
+  [".", ".", ".", ".", "8", ".", ".", "7", "9"],
+];
+// Output: false
+// Explanation: Same as Example 1, except with the
+// 5 in the top left corner being modified to 8.
+//  Since there are two 8's in the top left 3x3 sub-box, it is invalid.
+let board3 = [
+  [".", ".", ".", ".", ".", ".", "5", ".", "."],
+  [".", ".", ".", ".", ".", ".", ".", ".", "."],
+  [".", ".", ".", ".", ".", ".", ".", ".", "."],
+  ["9", "3", ".", ".", "2", ".", "4", ".", "."],
+  [".", ".", "7", ".", ".", ".", "3", ".", "."],
+  [".", ".", ".", ".", ".", ".", ".", ".", "."],
+  [".", ".", ".", "3", "4", ".", ".", ".", "."],
+  [".", ".", ".", ".", ".", "3", ".", ".", "."],
+  [".", ".", ".", ".", ".", "5", "2", ".", "."],
+];
+var isValidSudoku = function (board) {
+  for (let i = 0; i < board.length; i++) {
+    let rowArr = board[i].filter((e) => +e);
+    let rowSet = new Set(rowArr);
+    if (rowArr.length !== rowSet.size) {
+      return false;
+    }
+    let colMap = new Map();
+    let box = new Set();
 
-Input: nums = [-1,1,0,-3,3]
-Output: [0,0,9,0,0]], k = 1
+    for (let j = 0; j < board.length; j++) {
+      if (+board[j][i]) {
+        if (colMap.get(board[j][i]) === undefined) {
+          colMap.set(board[j][i], i);
+        } else {
+          return false;
+        }
+      }
+      let _box =
+        board[3 * Math.floor(i / 3) + Math.floor(j / 3)][3 * (i % 3) + (j % 3)];
 
-*/
-var productExceptSelf = function (nums) {
-  let finalArr = [];
-  let leftArr = [];
-  let leftNum = 1;
-  for (let i = 0; i < nums.length; i++) {
-    leftArr[i] = leftNum;
-    leftNum = leftNum * nums[i];
+      if (_box != ".") {
+        if (box.has(_box)) return false;
+        box.add(_box);
+      }
+    }
   }
-  let rightArr = [];
-  let rightNum = 1;
-  for (let i = nums.length - 1; i >= 0; i--) {
-    rightArr[i] = rightNum;
-    rightNum = rightNum * nums[i];
-    finalArr[i] = rightArr[i] * leftArr[i];
-  }
-
-  return finalArr;
+  return true;
 };
-
-console.log(productExceptSelf([-1, 1, 0, -3, 3]));
+console.log(isValidSudoku(board3));

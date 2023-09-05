@@ -466,16 +466,62 @@
   color: var(--secondary-color);
 }
 
+.about-landing {
+  height: calc(100vh - 65px);
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  text-align: center;
+}
+.about-landing .about-container {
+  width: 100%;
+}
+.about-landing .head-border {
+  border-bottom: 1px solid;
+}
+.about-landing h1 {
+  font-size: 8vw;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: var(--heading-color);
+}
+@media (max-width: 576px) {
+  .about-landing h1 {
+    font-size: 12vw;
+  }
+}
+.about-landing .React {
+  width: 100%;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--heading-color);
+}
+.about-landing .React p {
+  font-size: 1rem;
+  padding: 0 15px;
+  overflow: hidden;
+  word-break: keep-all;
+  color: var(--body-color);
+  margin-bottom: 15px;
+  font-weight: normal;
+  -webkit-text-stroke: 0;
+}
+.about-landing .React p span {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.white-bg {
+  background-color: var(--background-color) !important;
+}
+
 .wrapper {
   width: 100%;
   height: 100%;
   top: 0;
   z-index: 100;
-  background: linear-gradient(245deg, #ff014f, #239bf5);
-}
-
-.white-bg {
-  background-color: var(--background-color) !important;
+  background: var(--gradiant-color);
+  box-shadow: var(--box-shadow);
 }
 
 body {

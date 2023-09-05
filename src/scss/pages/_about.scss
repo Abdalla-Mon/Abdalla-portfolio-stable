@@ -1,0 +1,45 @@
+@use "../varibales/varibales" as *;
+.about-landing {
+  height: calc(100vh - 65px);
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  text-align: center;
+  .about-container {
+    width: 100%;
+  }
+  .head-border {
+    border-bottom: 1px solid;
+  }
+  h1 {
+    font-size: 8vw;
+    @media (max-width: 576px) {
+      font-size: 12vw;
+    }
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: $heading-color;
+  }
+  .React {
+    width: 100%;
+    color: transparent;
+    -webkit-text-stroke: 2px $heading-color;
+
+    p {
+      font-size: 1rem;
+      padding: 0 15px;
+      overflow: hidden;
+      word-break: keep-all;
+      color: $body-color;
+      margin-bottom: 15px;
+      font-weight: normal;
+      -webkit-text-stroke: 0;
+
+      span {
+        color: $primary-color;
+        font-weight: bold;
+      }
+    }
+  }
+}

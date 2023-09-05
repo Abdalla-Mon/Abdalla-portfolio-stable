@@ -71,10 +71,3 @@ function Text() {
     </>
   );
 }
-function Heading({ text, value }) {
-  let arr1 = [0, -100, -250];
-  let arr2 = [0, 100, 250];
-  const { scrollY } = useScroll();
-  const marginLeft = useTransform(scrollY, [-100, 100, 300], value);
-  return <motion.h1 style={{ marginLeft }}>{text}</motion.h1>;
-}
