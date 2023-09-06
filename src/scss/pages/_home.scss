@@ -140,12 +140,13 @@
     }
     a {
       background: $gradiant-color;
-      box-shadow: $box-shadow, $box-shadow;
+      box-shadow: $box-shadow;
       width: 60px;
       height: 60px;
       display: flex;
       justify-content: center;
       align-items: center;
+      color: $primary-color;
       svg {
         font-size: 1.2rem;
       }

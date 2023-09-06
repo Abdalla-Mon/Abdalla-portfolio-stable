@@ -98,6 +98,23 @@
   color: var(--primary-color) !important;
 }
 
+.toggle-mode {
+  display: flex;
+  justify-content: space-between;
+  width: 55px;
+  padding: 4px;
+  border-radius: 50px;
+  align-items: center;
+  cursor: pointer;
+}
+.toggle-mode .ball {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  z-index: 1;
+  border-radius: 50%;
+}
+
 footer {
   text-align: center;
   padding: 60px 10px;
@@ -288,6 +305,7 @@ footer p span {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: var(--primary-color);
   transition: 0.3s;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
@@ -336,6 +354,7 @@ footer p span {
   margin: 0 0 40px !important;
   font-weight: bold;
   font-size: 2.2rem;
+  color: var(--heading-color);
 }
 .portfolio h5 {
   font-size: 0.8rem;
@@ -345,7 +364,7 @@ footer p span {
 }
 .portfolio h3 {
   font-weight: bold;
-  color: var(--heading-color);
+  color: var(--body-color);
   font-size: calc(1.7rem + 0.1vw) !important;
 }
 .portfolio p {
@@ -634,7 +653,7 @@ footer p span {
   font-size: calc(2rem + 0.2vw);
   font-weight: bold;
   color: transparent;
-  -webkit-text-stroke: 3px var(--heading-color);
+  -webkit-text-stroke: 3px var(--body-color);
 }
 @media (min-width: 768px) {
   .about .about-box h2 {
@@ -664,7 +683,118 @@ footer p span {
 }
 
 .contact {
-  min-height: 100vh;
+  min-height: calc(100vh - 65px);
+  padding: 60px 15px;
+  display: flex;
+  align-items: center;
+}
+.contact h2 {
+  font-size: calc(1.1rem + 0.2vw);
+  font-weight: bold;
+  color: var(--heading-color);
+  margin: 20px 0 10px;
+}
+.contact .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.contact .email,
+.contact .phone {
+  display: flex;
+  gap: 4px;
+}
+.contact .email h6,
+.contact .phone h6 {
+  font-weight: bold;
+  color: var(--heading-color);
+}
+.contact .email p,
+.contact .phone p {
+  color: var(--primary-color);
+}
+.contact .contact-icons {
+  margin-top: 20px;
+}
+.contact .contact-icons a {
+  background: var(--gradiant-color);
+  box-shadow: var(--box-shadow), var(--box-shadow);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-color);
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.contact .contact-icons a svg {
+  font-size: 1.2rem;
+}
+.contact .contact-icons a:hover {
+  background: var(--hover-gradiant-color);
+  transform: translateY(-10px);
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  -o-transform: translateY(-10px);
+}
+.contact .contact-icons a:hover svg {
+  color: var(--secondary-color);
+}
+.contact .hire a {
+  padding: 8px 20px;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.contact .hire a.mostaql {
+  margin-left: 20px;
+}
+.contact .hire a::after {
+  z-index: -1;
+  content: "";
+  background: var(--gradiant-color);
+  width: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.contact .hire a:hover {
+  color: var(--body-color);
+  background: transparent;
+  box-shadow: var(--box-shadow), var(--box-shadow);
+}
+.contact .hire a:hover::after {
+  width: 100%;
 }
 
 .white-bg {

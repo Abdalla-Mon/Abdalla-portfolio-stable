@@ -3,6 +3,7 @@
   padding: 60px 15px;
   overflow: hidden;
   min-height: 100vh;
+
   @media (max-width: 767px) {
     padding: 60px 40px;
   }
@@ -16,6 +17,7 @@
     margin: 0 0 40px !important;
     font-weight: bold;
     font-size: 2.2rem;
+    color: $heading-color;
   }
   h5 {
     font-size: 0.8rem;
@@ -25,7 +27,7 @@
   }
   h3 {
     font-weight: bold;
-    color: $heading-color;
+    color: $body-color;
     font-size: calc(1.7rem + 0.1vw) !important;
   }
   p {
@@ -34,7 +36,7 @@
   .card {
     padding: 25px;
     background: $gradiant-color;
-    box-shadow: $box-shadow, $box-shadow;
+    box-shadow: $box-shadow;
     cursor: pointer;
     border-radius: 12px;
     -webkit-border-radius: 12px;
@@ -133,7 +135,7 @@
       padding: 20px;
     }
     background: $gradiant-color;
-    box-shadow: $box-shadow, $box-shadow;
+    box-shadow: $box-shadow;
 
     border-radius: 6px;
     -webkit-border-radius: 10px;
@@ -185,7 +187,7 @@
     }
     width: 40px;
     height: 40px;
-    box-shadow: $box-shadow, $box-shadow;
+    box-shadow: $box-shadow;
     background: $gradiant-color;
     border-radius: 50%;
     -webkit-border-radius: 50%;

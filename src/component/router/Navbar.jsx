@@ -13,7 +13,8 @@ import Toolbar from "@mui/material/Toolbar";
 
 import { useNavigate } from "react-router-dom";
 import { RouteProvider } from "../../App";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { motion } from "framer-motion";
 const drawerWidth = 240;
 const navItems = ["home", "portfolio", "about", "contact"];
 let w = window;
@@ -147,6 +148,7 @@ function DrawerAppBar(props) {
               );
             })}
           </ul>
+          <ToggleMode />
         </Toolbar>
       </AppBar>
       <nav>
@@ -175,7 +177,75 @@ function DrawerAppBar(props) {
     </Box>
   );
 }
-
+function rootColors(toggle) {
+  let theme = [
+    { var: "--primary-color", lightColor: "#ff014f", darkColor: "#ff014f" },
+    { var: "--secondary-color", lightColor: "#f4f5f6", darkColor: "#f4f5f6" },
+    { var: "--tertiary-color", lightColor: "#0d1013", darkColor: "#0d1013" },
+    { var: "--gray-color", lightColor: "#f6f6f6", darkColor: "#f6f6f6" },
+    { var: "--body-color", lightColor: "#3c3e41", darkColor: "#c4cfde" },
+    { var: "--heading-color", lightColor: "#1e2125", darkColor: "#ffffff" },
+    { var: "--subtitle-color", lightColor: "#f9004d", darkColor: "#f9004d" },
+    { var: "--background-color", lightColor: "#ecf0f3", darkColor: "#212428" },
+    {
+      var: "--box-shadow",
+      lightColor: "5px 5px 15px #d1d9e6, -5px -5px 15px #ffffff",
+      darkColor: "10px 10px 19px #1c1e22,-10px -10px 19px #262a2e",
+    },
+    {
+      var: "--gradiant-color",
+      lightColor: "linear-gradient(145deg, #e2e8ec, #ffffff)",
+      darkColor: "linear-gradient(145deg, #1e2024, #23272b)",
+    },
+    {
+      var: "--hover-gradiant-color",
+      lightColor: "linear-gradient(145deg, #ff014f, #d11414)",
+      darkColor: "linear-gradient(to right bottom, #212428, #16181c)",
+    },
+  ];
+  if (toggle) {
+    theme.forEach((e) => {
+      document.documentElement.style.setProperty(e.var, e.darkColor);
+    });
+  } else {
+    theme.forEach((e) => {
+      document.documentElement.style.setProperty(e.var, e.lightColor);
+    });
+  }
+}
+function ToggleMode() {
+  const [toggle, setToggle] = React.useState(false);
+  return (
+    <motion.div
+      className="toggle-mode relative"
+      animate={
+        toggle
+          ? { backgroundColor: "#f4f5f6", color: "#1e2125" }
+          : { backgroundColor: "#1e2125", color: "#f4f5f6" }
+      }
+      onClick={() => {
+        setToggle(!toggle);
+        rootColors(!toggle);
+      }}
+    >
+      <FontAwesomeIcon icon="fa-solid fa-moon" />{" "}
+      <FontAwesomeIcon icon="fa-solid fa-sun" />
+      <motion.span
+        className="ball"
+        initial={
+          toggle
+            ? { left: 33, backgroundColor: "#1e2125" }
+            : { left: 3, backgroundColor: "#f4f5f6" }
+        }
+        animate={
+          toggle
+            ? { left: 33, backgroundColor: "#1e2125" }
+            : { left: 3, backgroundColor: "#f4f5f6" }
+        }
+      ></motion.span>
+    </motion.div>
+  );
+}
 DrawerAppBar.propTypes = {
   /**
    * Injected by the documentation to work in an iframe.
