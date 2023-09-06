@@ -25,7 +25,7 @@ const router = createBrowserRouter(
     </Route>
   ),
   {
-    basename: window.location.host,
+    basename: "https://abdalla-port.vercel.app/",
   }
 );
 function App() {
