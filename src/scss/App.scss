@@ -7,7 +7,10 @@
   top: 0;
   z-index: 100;
   // background: linear-gradient(245deg, #ff014f, #239bf5);
-  background: $gradiant-color;
+  // background: $gradiant-color;
+  // background: $hover-gradiant-color;
+  background: $body-color;
+  // border: 3px solid #ff014f63;
   // background: $body-color;
   box-shadow: $box-shadow;
   // background: white;

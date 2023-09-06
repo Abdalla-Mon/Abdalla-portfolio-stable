@@ -99,10 +99,10 @@
   align-items: center;
   cursor: pointer;
   .ball {
-    top: 0;
+    top: 2px;
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 19px;
+    height: 19px;
     z-index: 1;
     border-radius: 50%;
   }

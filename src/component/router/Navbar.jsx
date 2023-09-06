@@ -235,12 +235,12 @@ function ToggleMode() {
         initial={
           toggle
             ? { left: 33, backgroundColor: "#1e2125" }
-            : { left: 3, backgroundColor: "#f4f5f6" }
+            : { left: 4, backgroundColor: "#f4f5f6" }
         }
         animate={
           toggle
             ? { left: 33, backgroundColor: "#1e2125" }
-            : { left: 3, backgroundColor: "#f4f5f6" }
+            : { left: 4, backgroundColor: "#f4f5f6" }
         }
       ></motion.span>
     </motion.div>
