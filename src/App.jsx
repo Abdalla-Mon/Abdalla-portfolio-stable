@@ -3,6 +3,7 @@ import {
   Route,
   RouterProvider,
   createBrowserRouter,
+  createHashRouter,
   createRoutesFromElements,
 } from "react-router-dom";
 import Home from "./component/home/Home";
@@ -15,7 +16,7 @@ import { createContext } from "react";
 import Contact from "./component/contact/Contact";
 import Footer from "./component/router/Footer";
 export const RouteProvider = createContext(false);
-const router = createBrowserRouter(
+const router = createHashRouter(
   createRoutesFromElements(
     <Route element={<Routes />}>
       <Route path="" element={<Home />} />
@@ -23,10 +24,7 @@ const router = createBrowserRouter(
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
     </Route>
-  ),
-  {
-    basename: "https://abdalla-port.vercel.app/",
-  }
+  )
 );
 function App() {
   return <RouterProvider router={router} />;
