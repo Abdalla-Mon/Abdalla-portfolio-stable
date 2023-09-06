@@ -23,7 +23,10 @@ const router = createBrowserRouter(
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
     </Route>
-  )
+  ),
+  {
+    basename: window.location.host,
+  }
 );
 function App() {
   return <RouterProvider router={router} />;
