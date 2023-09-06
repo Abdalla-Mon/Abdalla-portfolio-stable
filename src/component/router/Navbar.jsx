@@ -203,6 +203,7 @@ function rootColors(toggle) {
       darkColor: "linear-gradient(to right bottom, #212428, #16181c)",
     },
   ];
+  // console.log(toggle);
   if (toggle) {
     theme.forEach((e) => {
       document.documentElement.style.setProperty(e.var, e.darkColor);
@@ -212,9 +213,13 @@ function rootColors(toggle) {
       document.documentElement.style.setProperty(e.var, e.lightColor);
     });
   }
+  window.localStorage.setItem("toggle", toggle);
 }
 function ToggleMode() {
-  const [toggle, setToggle] = React.useState(false);
+  const [toggle, setToggle] = React.useState(
+    window.localStorage.getItem("toggle") || false
+  );
+  rootColors(toggle);
   return (
     <motion.div
       className="toggle-mode relative"

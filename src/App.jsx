@@ -15,6 +15,7 @@ import { motion } from "framer-motion";
 import { createContext } from "react";
 import Contact from "./component/contact/Contact";
 import Footer from "./component/router/Footer";
+import Loader from "./component/Loader";
 export const RouteProvider = createContext(false);
 const router = createHashRouter(
   createRoutesFromElements(
@@ -42,7 +43,7 @@ function Routes() {
     <RouteProvider.Provider
       value={{ animation, setAnimation, index, setIndex, setState, state }}
     >
-      {loader ? <p>loading</p> : null}
+      {loader ? <Loader /> : null}
       {!loader ? (
         <>
           <Navbar />
