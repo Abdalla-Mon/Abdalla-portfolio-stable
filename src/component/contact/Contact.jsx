@@ -91,8 +91,8 @@ export default function Contact() {
           </div>
           <div className="right tab:w-3/6">
             <div className="img-container">
-              {/* <img src="./contact2.svg" alt="contact-us" /> */}
-              <img src="./contact3.svg" alt="contact-us" />
+              {/* <img src="./contact3.svg" alt="contact-us" /> */}
+              <img src="./contact4.png" alt="contact-us" />
             </div>
           </div>
         </motion.div>
