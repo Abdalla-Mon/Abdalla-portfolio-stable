@@ -6,36 +6,36 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function Contact() {
   const { animation, state } = useContext(RouteProvider);
   return (
-    <motion.section
-      className="contact"
-      initial={
-        state === "left"
-          ? { scale: 0.5, x: "100vw" }
-          : { scale: 0.5, x: "-100vw" }
-      }
-      animate={
-        animation
-          ? state === "left"
-            ? { scale: [1, 0.5], x: "-100vw" }
-            : { scale: [1, 0.5], x: "100vw" }
-          : state === "left"
-          ? { x: "0vw", scale: 1 }
-          : { x: "0vw", scale: 1 }
-      }
-      transition={
-        animation
-          ? {
-              x: { duration: 0.5, delay: 0.5 },
-              scale: { duration: 0.5, delay: 0 },
-            }
-          : {
-              x: { duration: 0.5, delay: 0 },
-              scale: { duration: 0.5, delay: 0.5 },
-            }
-      }
-    >
+    <motion.section className="contact">
       <div className="container mx-auto">
-        <div className="contact-content flex gap-8 flex-col-reverse tab:flex-row">
+        <motion.div
+          initial={
+            state === "left"
+              ? { scale: 0.5, x: "100vw" }
+              : { scale: 0.5, x: "-100vw" }
+          }
+          animate={
+            animation
+              ? state === "left"
+                ? { scale: [1, 0.5], x: "-100vw" }
+                : { scale: [1, 0.5], x: "100vw" }
+              : state === "left"
+              ? { x: "0vw", scale: 1 }
+              : { x: "0vw", scale: 1 }
+          }
+          transition={
+            animation
+              ? {
+                  x: { duration: 0.5, delay: 0.5 },
+                  scale: { duration: 0.5, delay: 0 },
+                }
+              : {
+                  x: { duration: 0.5, delay: 0 },
+                  scale: { duration: 0.5, delay: 0.5 },
+                }
+          }
+          className="contact-content flex gap-8 flex-col-reverse tab:flex-row"
+        >
           <div className="left tab:w-3/6">
             <div className="contact-me">
               <h2>Contact me</h2>
@@ -95,7 +95,7 @@ export default function Contact() {
               <img src="./contact3.svg" alt="contact-us" />
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </motion.section>
   );

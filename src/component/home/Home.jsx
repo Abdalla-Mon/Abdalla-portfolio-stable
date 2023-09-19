@@ -9,34 +9,36 @@ export default function Home() {
     <motion.section
       className="home"
       // initial={{  }}              animate={{ x: ["-100vw", "0vw", "100vw"] }}
-      initial={
-        state === "left"
-          ? { scale: 0.5, x: "100vw" }
-          : { scale: 0.5, x: "-100vw" }
-      }
-      animate={
-        animation
-          ? state === "left"
-            ? { scale: [1, 0.5], x: "-100vw" }
-            : { scale: [1, 0.5], x: "100vw" }
-          : state === "left"
-          ? { x: "0vw", scale: 1 }
-          : { x: "0vw", scale: 1 }
-      }
-      transition={
-        animation
-          ? {
-              x: { duration: 0.5, delay: 0.5 },
-              scale: { duration: 0.5, delay: 0 },
-            }
-          : {
-              x: { duration: 0.5, delay: 0 },
-              scale: { duration: 0.5, delay: 0.5 },
-            }
-      }
     >
       <div className="container mx-auto">
-        <div className="home-content">
+        <motion.div
+          className="home-content"
+          initial={
+            state === "left"
+              ? { scale: 0.5, x: "100vw" }
+              : { scale: 0.5, x: "-100vw" }
+          }
+          animate={
+            animation
+              ? state === "left"
+                ? { scale: [1, 0.5], x: "-100vw" }
+                : { scale: [1, 0.5], x: "100vw" }
+              : state === "left"
+              ? { x: "0vw", scale: 1 }
+              : { x: "0vw", scale: 1 }
+          }
+          transition={
+            animation
+              ? {
+                  x: { duration: 0.5, delay: 0.5 },
+                  scale: { duration: 0.5, delay: 0 },
+                }
+              : {
+                  x: { duration: 0.5, delay: 0 },
+                  scale: { duration: 0.5, delay: 0.5 },
+                }
+          }
+        >
           <div className="text">
             <Text />
           </div>
@@ -45,7 +47,7 @@ export default function Home() {
               <img src="./landing-imgs/port-img.png" alt="Abdalla's photo" />
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </motion.section>
   );

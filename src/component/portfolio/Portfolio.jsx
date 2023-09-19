@@ -104,7 +104,13 @@ function Card({ ele }) {
         </div>
       </motion.div>
       {/* ) : null} */}
-      <div className="card" onClick={() => setPopup(true)}>
+      <div
+        className="card"
+        onClick={() => {
+          document.querySelector(".portfolio").style = "transform: unset";
+          setPopup(true);
+        }}
+      >
         <div className="card-img">
           <img src={"./portfolio-imgs/" + ele.name + ".png"} alt={ele.name} />
         </div>

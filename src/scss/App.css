@@ -820,6 +820,14 @@ body {
   background-color: var(--background-color) !important;
 }
 
+.home,
+.portfolio,
+.about,
+.contact {
+  width: 100%;
+  overflow: hidden;
+}
+
 p {
   line-height: 1.6;
 }
