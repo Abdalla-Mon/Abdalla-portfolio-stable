@@ -8,15 +8,31 @@ export default function Contact() {
   return (
     <motion.section
       className="contact"
-      initial={{ scale: 0 }}
+      initial={
+        state === "left"
+          ? { scale: 0.5, x: "100vw" }
+          : { scale: 0.5, x: "-100vw" }
+      }
       animate={
         animation
           ? state === "left"
-            ? { x: "100vw" }
-            : { x: "-100vw" }
-          : { scale: [0, 1] }
+            ? { scale: [1, 0.5], x: "-100vw" }
+            : { scale: [1, 0.5], x: "100vw" }
+          : state === "left"
+          ? { x: "0vw", scale: 1 }
+          : { x: "0vw", scale: 1 }
       }
-      transition={{ duration: 0.5 }}
+      transition={
+        animation
+          ? {
+              x: { duration: 0.5, delay: 0.5 },
+              scale: { duration: 0.5, delay: 0 },
+            }
+          : {
+              x: { duration: 0.5, delay: 0 },
+              scale: { duration: 0.5, delay: 0.5 },
+            }
+      }
     >
       <div className="container mx-auto">
         <div className="contact-content flex gap-8 flex-col-reverse tab:flex-row">

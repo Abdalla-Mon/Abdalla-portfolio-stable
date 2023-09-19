@@ -9,18 +9,61 @@ export default function About() {
 
   return (
     <motion.section
-      initial={{ scale: 0 }}
-      animate={
-        animation
-          ? state === "left"
-            ? { x: "100vw" }
-            : { x: "-100vw" }
-          : { scale: [0, 1] }
-      }
-      transition={{ duration: 0.5 }}
+      // initial={
+      //   state === "left"
+      //     ? { scale: 0.5, x: "100vw" }
+      //     : { scale: 0.5, x: "-100vw" }
+      // }
+      // animate={
+      //   animation
+      //     ? state === "left"
+      //       ? { scale: [1, 0.5], x: "-100vw" }
+      //       : { scale: [1, 0.5], x: "100vw" }
+      //     : state === "left"
+      //     ? { x: "0vw", scale: 1 }
+      //     : { x: "0vw", scale: 1 }
+      // }
+      // transition={
+      //   animation
+      //     ? {
+      //         x: { duration: 0.5, delay: 0.5 },
+      //         scale: { duration: 0.5, delay: 0 },
+      //       }
+      //     : {
+      //         x: { duration: 0.5, delay: 0 },
+      //         scale: { duration: 0.5, delay: 0.5 },
+      //       }
+      // }
       className="about"
     >
-      <div className="about-landing">
+      <motion.div
+        className="about-landing"
+        initial={
+          state === "left"
+            ? { scale: 0.5, x: "100vw" }
+            : { scale: 0.5, x: "-100vw" }
+        }
+        animate={
+          animation
+            ? state === "left"
+              ? { scale: [1, 0.5], x: "-100vw" }
+              : { scale: [1, 0.5], x: "100vw" }
+            : state === "left"
+            ? { x: "0vw", scale: 1 }
+            : { x: "0vw", scale: 1 }
+        }
+        transition={
+          animation
+            ? {
+                x: { duration: 0.5, delay: 0.5 },
+                scale: { duration: 0.5, delay: 0 },
+              }
+            : {
+                x: { duration: 0.5, delay: 0 },
+                scale: { duration: 0.5, delay: 0.5 },
+              }
+        }
+      >
         <div className="about-container">
           <div className="head-border">
             <Heading value={arr1} head={"Frontend"} />
@@ -30,7 +73,7 @@ export default function About() {
           </div>
           <Heading value={arr3} head={"Developer"} />
         </div>
-      </div>
+      </motion.div>
       <AboutText />
     </motion.section>
   );

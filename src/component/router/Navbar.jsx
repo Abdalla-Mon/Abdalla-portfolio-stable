@@ -76,6 +76,7 @@ function DrawerAppBar(props) {
       </ul>
     </Box>
   );
+
   function navig(e, id, className, i) {
     if (i > index) {
       setState("left");
@@ -87,7 +88,7 @@ function DrawerAppBar(props) {
     w.setTimeout(() => {
       navigate(e);
       setAnimation(false);
-    }, 800);
+    }, 1000);
     document.querySelectorAll("." + className).forEach((el) => {
       el.classList.remove("active");
     });
@@ -171,9 +172,6 @@ function DrawerAppBar(props) {
           {drawer}
         </Drawer>
       </nav>
-      {/* <Box component="main" sx={{ p: 3 }}>
-      <Toolbar className="toolbarr" />
-      </Box> */}
     </Box>
   );
 }
@@ -203,8 +201,7 @@ function rootColors(toggle) {
       darkColor: "linear-gradient(to right bottom, #212428, #16181c)",
     },
   ];
-  // console.log(toggle);
-  if (toggle) {
+  if (toggle === true) {
     theme.forEach((e) => {
       document.documentElement.style.setProperty(e.var, e.darkColor);
     });
@@ -217,9 +214,12 @@ function rootColors(toggle) {
 }
 function ToggleMode() {
   const [toggle, setToggle] = React.useState(
-    window.localStorage.getItem("toggle") || false
+    JSON.parse(window.localStorage.getItem("toggle")) || false
   );
-  rootColors(toggle);
+  React.useEffect(() => {
+    rootColors(toggle);
+  }, []);
+  // rootColors(toggle);
   return (
     <motion.div
       className="toggle-mode relative"
