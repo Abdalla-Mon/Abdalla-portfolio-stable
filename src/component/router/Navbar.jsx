@@ -176,8 +176,14 @@ function DrawerAppBar(props) {
   );
 }
 function rootColors(toggle) {
+  // { var: "--primary-color", lightColor: "#ff014f", darkColor: "#ff014f" },
+  // {
+  //   var: "--hover-gradiant-color",
+  //   lightColor: "linear-gradient(145deg, #ff014f, #d11414)",
+  //   darkColor: "linear-gradient(to right bottom, #212428, #16181c)",
+  // },
   let theme = [
-    { var: "--primary-color", lightColor: "#ff014f", darkColor: "#ff014f" },
+    { var: "--primary-color", lightColor: "#125dbb", darkColor: "#2270d3" },
     { var: "--secondary-color", lightColor: "#f4f5f6", darkColor: "#f4f5f6" },
     { var: "--tertiary-color", lightColor: "#0d1013", darkColor: "#0d1013" },
     { var: "--gray-color", lightColor: "#f6f6f6", darkColor: "#f6f6f6" },
@@ -197,7 +203,7 @@ function rootColors(toggle) {
     },
     {
       var: "--hover-gradiant-color",
-      lightColor: "linear-gradient(145deg, #ff014f, #d11414)",
+      lightColor: "linear-gradient(145deg, #ff014f, #125dbb)",
       darkColor: "linear-gradient(to right bottom, #212428, #16181c)",
     },
   ];
