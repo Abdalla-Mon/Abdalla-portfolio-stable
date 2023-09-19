@@ -11,7 +11,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Close } from "@mui/icons-material";
 import Toolbar from "@mui/material/Toolbar";
 
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { RouteProvider } from "../../App";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
@@ -76,7 +76,7 @@ function DrawerAppBar(props) {
       </ul>
     </Box>
   );
-
+  const ids = useLocation();
   function navig(e, id, className, i) {
     if (i > index) {
       setState("left");
@@ -89,6 +89,8 @@ function DrawerAppBar(props) {
       navigate(e);
       setAnimation(false);
     }, 1000);
+    console.log(id);
+
     document.querySelectorAll("." + className).forEach((el) => {
       el.classList.remove("active");
     });
