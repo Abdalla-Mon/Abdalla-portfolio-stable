@@ -8,7 +8,7 @@ export default function Footer() {
       <p>
         Made with love by{" "}
         <span onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-          AbdallaMon
+          Abdalla
         </span>
       </p>
     </footer>
