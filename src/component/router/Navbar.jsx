@@ -89,7 +89,6 @@ function DrawerAppBar(props) {
       navigate(e);
       setAnimation(false);
     }, 1000);
-    console.log(id);
 
     document.querySelectorAll("." + className).forEach((el) => {
       el.classList.remove("active");
@@ -205,7 +204,7 @@ function rootColors(toggle) {
     },
     {
       var: "--hover-gradiant-color",
-      lightColor: "linear-gradient(145deg, #ff014f, #125dbb)",
+      lightColor: "linear-gradient(145deg, #4fa0dd, #125dbb)",
       darkColor: "linear-gradient(to right bottom, #212428, #16181c)",
     },
   ];
