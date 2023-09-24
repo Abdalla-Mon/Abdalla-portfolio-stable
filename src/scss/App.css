@@ -403,6 +403,9 @@ footer p span {
 .portfolio .card:hover img {
   scale: 1.1;
 }
+.portfolio .card:hover p {
+  color: var(--subtitle-color);
+}
 .portfolio .card-popup {
   top: 0;
   left: 0;
