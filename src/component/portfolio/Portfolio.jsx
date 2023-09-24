@@ -8,6 +8,22 @@ export default function Portfolio() {
 
   const portArr = [
     {
+      name: "E Trade",
+      url: "https://e-trade.vercel.app/",
+      gitHub: "https://github.com/Abdalla-Mon/e-trade",
+      text: "E-trade is E-commerce website with a lot of features like filtering & custom pagination & controling shop page display and more.",
+      skills: [
+        "react",
+        "react redux",
+        "Tailwind CSS",
+        "React Queru",
+        "MUI",
+        "Swiper.js",
+        "Scss",
+      ],
+      cat: "E Commerce",
+    },
+    {
       name: "Sandbox",
       url: "https://sandbox-abdalla-mon.vercel.app/",
       gitHub: "https://github.com/Abdalla-Mon/sandbox-port",
