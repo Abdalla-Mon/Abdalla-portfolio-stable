@@ -2,7 +2,6 @@ import {
   Outlet,
   Route,
   RouterProvider,
-  createBrowserRouter,
   createHashRouter,
   createRoutesFromElements,
 } from "react-router-dom";
@@ -47,22 +46,7 @@ function Routes() {
       {!loader ? (
         <>
           <Navbar />
-          {/* {animation ? (
-            // <motion.div
-            //   initial={state === "left" ? { left: 0 } : { right: 0 }}
-            //   // animate={{ width: ["0vw", "100vw"], scale: [1, 0] }}
-            //   transition={{
-            //     width: {
-            //       duration: 0.4,
-            //     },
-            //     scale: {
-            //       duration: 0.4,
-            //       delay: 0.4,
-            //     },
-            //   }}
-            //   className="wrapper fixed"
-            // ></motion.div>
-          ) : null} */}
+
           <Outlet />
           <Footer />
         </>
