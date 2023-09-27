@@ -11,7 +11,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Close } from "@mui/icons-material";
 import Toolbar from "@mui/material/Toolbar";
 
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { RouteProvider } from "../../App";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
@@ -35,7 +35,10 @@ function DrawerAppBar(props) {
       <div className="flex drawer-header justify-between items-center">
         <div className="navbar-logo mb-navbar-logo flex items-center">
           <div className="img-container mr-2">
-            <img src="./landing-imgs/face-port-1.png" />
+            <img
+              src="./landing-imgs/face-port-1.png"
+              alt="Abdalla Abdelsabour Portfolio"
+            />
           </div>{" "}
         </div>
         <IconButton
@@ -76,7 +79,6 @@ function DrawerAppBar(props) {
       </ul>
     </Box>
   );
-  const ids = useLocation();
   function navig(e, id, className, i) {
     if (i > index) {
       setState("left");
@@ -177,12 +179,6 @@ function DrawerAppBar(props) {
   );
 }
 function rootColors(toggle) {
-  // { var: "--primary-color", lightColor: "#ff014f", darkColor: "#ff014f" },
-  // {
-  //   var: "--hover-gradiant-color",
-  //   lightColor: "linear-gradient(145deg, #ff014f, #d11414)",
-  //   darkColor: "linear-gradient(to right bottom, #212428, #16181c)",
-  // },
   let theme = [
     { var: "--primary-color", lightColor: "#125dbb", darkColor: "#2270d3" },
     { var: "--secondary-color", lightColor: "#f4f5f6", darkColor: "#f4f5f6" },

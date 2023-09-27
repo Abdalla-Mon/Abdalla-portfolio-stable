@@ -1,15 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useTransform, motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { RouteProvider } from "../../App";
 import { useContext } from "react";
 export default function Home() {
   const { animation, state } = useContext(RouteProvider);
   return (
-    <motion.section
-      className="home"
-      // initial={{  }}              animate={{ x: ["-100vw", "0vw", "100vw"] }}
-    >
+    <motion.section className="home">
+      <p className="hidden">abdalla abdelsabour portfolio</p>
+
       <div className="container mx-auto">
         <motion.div
           className="home-content"

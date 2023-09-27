@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer>
       <div className="img-container ">
-        <img src="./landing-imgs/face-port-1.png" />
+        <img src="./landing-imgs/face-port-1.png" alt="Abdalla's photo" />
       </div>{" "}
       <h3>Abdalla</h3>
       <p>
