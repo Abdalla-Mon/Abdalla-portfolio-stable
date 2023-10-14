@@ -12,6 +12,7 @@ export default function Home() {
       <p className="hidden">عبدالله عبدالصبور </p>
       <p className="hidden">عبدالله </p>
       <p className="hidden">abdalla</p>
+      <p className="hidden">abdalla portfolio</p>
 
       <div className="container mx-auto">
         <motion.div
@@ -47,7 +48,15 @@ export default function Home() {
           </div>
           <div className="img-container">
             <div className="img-wrapper flex justify-center">
-              <img src="./landing-imgs/port-img.png" alt="Abdalla's photo" />
+              <img
+                src="./landing-imgs/port-img.png"
+                alt="Abdalla Abdelsabour"
+              />
+              <img
+                src="./landing-imgs/port-img.png"
+                alt="عبدالله عبدالصبور"
+                className="hidden"
+              />
             </div>
           </div>
         </motion.div>
@@ -59,6 +68,10 @@ function Text() {
   return (
     <>
       <h6>WELCOME TO MY WORLD</h6>
+      <h1 className="hidden">Abdalla Abdelsabour</h1>
+      <h1 className="hidden">Abdalla</h1>
+      <h1 className="hidden">عبدالله عبدالصبور</h1>
+      <h1 className="hidden">عبدالله</h1>
       <h1>
         Hi, I’m <span className="colored">Abdalla Abdelsabour a </span>
         <TypeAnimation

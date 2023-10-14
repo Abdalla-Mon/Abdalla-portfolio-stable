@@ -44,6 +44,11 @@ function DrawerAppBar(props) {
               alt="Abdalla Abdelsabour"
               className="hidden"
             />
+            <img
+              src="./landing-imgs/face-port-1.png"
+              alt="عبدالله عبدالصبور"
+              className="hidden"
+            />
           </div>{" "}
         </div>
         <IconButton

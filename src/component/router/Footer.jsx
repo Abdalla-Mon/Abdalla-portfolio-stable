@@ -3,6 +3,11 @@ export default function Footer() {
     <footer>
       <div className="img-container ">
         <img src="./landing-imgs/face-port-1.png" alt="Abdalla Abdelsabour" />
+        <img
+          src="./landing-imgs/face-port-1.png"
+          alt="عبدالله عبدالصبور"
+          className="hidden"
+        />
       </div>{" "}
       <h3>Abdalla</h3>
       <p>
