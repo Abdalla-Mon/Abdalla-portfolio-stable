@@ -25,6 +25,7 @@
     height: 64px;
   }
 }
+
 .navbar-ul {
   transform: 0.3s;
   -webkit-transform: 0.3s;
@@ -37,6 +38,7 @@
   cursor: pointer;
   color: var(--body-color);
   font-size: calc(0.9rem + 0.1vw);
+  display: block;
 }
 .navbar-ul a.active {
   font-weight: 600;
@@ -189,6 +191,8 @@ footer p span {
 }
 .home-content .h6 {
   color: var(--body-color) !important;
+  font-weight: bold;
+  margin-bottom: -5px;
 }
 .home-content h1 {
   color: var(--heading-color);
