@@ -53,19 +53,22 @@ export default function Contact() {
                 <a
                   className="face-icon "
                   href="https://www.facebook.com/abdalla.abdalsabor/"
+                  title="My Facebook Profile"
                 >
                   <FontAwesomeIcon icon="fa-brands fa-facebook-f" />
                 </a>
                 <a
                   className="linkedin-icon "
                   href="https://www.linkedin.com/in/abdalla-abdelsabor-ba6983235/"
+                  title="My linkeding profile"
                 >
                   <FontAwesomeIcon icon="fa-brands fa-linkedin-in" />{" "}
                 </a>
                 <a
                   className="whats-icon "
                   href="https://wa.me/+01127342564"
-                  target="_blank"
+                  target="blank"
+                  title="My whatsapp "
                 >
                   <FontAwesomeIcon icon="fa-brands fa-whatsapp" />{" "}
                 </a>
@@ -91,7 +94,6 @@ export default function Contact() {
           </div>
           <div className="right tab:w-3/6">
             <div className="img-container">
-              {/* <img src="./contact3.svg" alt="contact-us" /> */}
               <img src="./contact3.svg" alt="contact-us" />
             </div>
           </div>

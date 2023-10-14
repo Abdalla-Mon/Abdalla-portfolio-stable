@@ -34,8 +34,8 @@
   h1 {
     font-weight: bold;
   }
-  h6 {
-    color: $body-color;
+  .h6 {
+    color: $body-color !important;
   }
   h1 {
     color: $heading-color;

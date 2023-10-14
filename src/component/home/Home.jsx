@@ -67,7 +67,7 @@ export default function Home() {
 function Text() {
   return (
     <>
-      <h6>WELCOME TO MY WORLD</h6>
+      <h1 className=".h6">WELCOME TO MY WORLD</h1>
       <h1 className="hidden">Abdalla Abdelsabour</h1>
       <h1 className="hidden">Abdalla</h1>
       <h1 className="hidden">عبدالله عبدالصبور</h1>
@@ -94,6 +94,7 @@ function Text() {
       <a
         className="cv"
         href="https://drive.google.com/file/d/1AGgHjiOP34FsT85DBRoRDLYHP7-55NBk/view"
+        title="My cv "
       >
         Download My CV
       </a>
@@ -101,16 +102,22 @@ function Text() {
         <a
           className="face-icon "
           href="https://www.facebook.com/abdalla.abdalsabor/"
+          title="My Facebook Profile"
         >
           <FontAwesomeIcon icon="fa-brands fa-facebook-f" />
         </a>
         <a
           className="linkedin-icon "
           href="https://www.linkedin.com/in/abdalla-abdelsabor-ba6983235/"
+          title="My linkedin Profile"
         >
           <FontAwesomeIcon icon="fa-brands fa-linkedin-in" />{" "}
         </a>
-        <a className="github-icon " href="https://github.com/Abdalla-Mon">
+        <a
+          className="github-icon "
+          href="https://github.com/Abdalla-Mon"
+          title="My github Profile"
+        >
           <FontAwesomeIcon icon="fa-brands fa-github" />{" "}
         </a>
       </div>

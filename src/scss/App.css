@@ -187,8 +187,8 @@ footer p span {
 .home-content h1 {
   font-weight: bold;
 }
-.home-content h6 {
-  color: var(--body-color);
+.home-content .h6 {
+  color: var(--body-color) !important;
 }
 .home-content h1 {
   color: var(--heading-color);
