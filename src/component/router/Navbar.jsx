@@ -137,7 +137,10 @@ function DrawerAppBar(props) {
             }}
           >
             <div className="img-container mr-2">
-              <img src="./landing-imgs/face-port-1.png" />
+              <img
+                src="./landing-imgs/face-port-1.png"
+                alt="abdalla abdelsabour"
+              />
             </div>{" "}
             <h3>Abdalla</h3>
           </div>
