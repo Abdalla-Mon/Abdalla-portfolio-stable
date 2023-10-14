@@ -8,6 +8,10 @@ export default function Home() {
   return (
     <motion.section className="home">
       <p className="hidden">abdalla abdelsabour portfolio</p>
+      <p className="hidden">abdalla abdelsabour </p>
+      <p className="hidden">عبدالله عبدالصبور </p>
+      <p className="hidden">عبدالله </p>
+      <p className="hidden">abdalla</p>
 
       <div className="container mx-auto">
         <motion.div
