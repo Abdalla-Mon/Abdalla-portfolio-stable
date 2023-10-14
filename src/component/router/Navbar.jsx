@@ -66,24 +66,25 @@ function DrawerAppBar(props) {
       <ul className="flex flex-col gap-2 navbar-ul drawer-ul">
         {navItems.map((item, ind) => {
           return (
-            <a
-              id={item + "mob"}
-              className={item === "home" ? "active mob-links" : "mob-links"}
-              onClick={() => {
-                handleDrawerToggle();
+            <li key={item}>
+              <a
+                id={item + "mob"}
+                className={item === "home" ? "active mob-links" : "mob-links"}
+                onClick={() => {
+                  handleDrawerToggle();
 
-                navig(
-                  item === "home" ? "" : item,
-                  item + "mob",
-                  "mob-links",
-                  ind
-                );
-              }}
-              key={item}
-              to={item === "home" ? "" : item}
-            >
-              {item}
-            </a>
+                  navig(
+                    item === "home" ? "" : item,
+                    item + "mob",
+                    "mob-links",
+                    ind
+                  );
+                }}
+                to={item === "home" ? "" : item}
+              >
+                {item}
+              </a>
+            </li>
           );
         })}
       </ul>
@@ -147,21 +148,22 @@ function DrawerAppBar(props) {
           <ul className="hidden tab:flex gap-6 navbar-ul pr-2 ">
             {navItems.map((item, ind) => {
               return (
-                <a
-                  key={item}
-                  id={item + "pc"}
-                  className={item === "home" ? "active pc-links" : "pc-links"}
-                  onClick={() => {
-                    navig(
-                      item === "home" ? "" : item,
-                      item + "pc",
-                      "pc-links",
-                      ind
-                    );
-                  }}
-                >
-                  {item}
-                </a>
+                <li key={item}>
+                  <a
+                    id={item + "pc"}
+                    className={item === "home" ? "active pc-links" : "pc-links"}
+                    onClick={() => {
+                      navig(
+                        item === "home" ? "" : item,
+                        item + "pc",
+                        "pc-links",
+                        ind
+                      );
+                    }}
+                  >
+                    {item}
+                  </a>
+                </li>
               );
             })}
           </ul>

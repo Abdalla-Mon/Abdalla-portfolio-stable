@@ -67,7 +67,7 @@ export default function Home() {
 function Text() {
   return (
     <>
-      <h1 className=".h6">WELCOME TO MY WORLD</h1>
+      <div className="h6">WELCOME TO MY WORLD</div>
       <h1 className="hidden">Abdalla Abdelsabour</h1>
       <h1 className="hidden">Abdalla</h1>
       <h1 className="hidden">عبدالله عبدالصبور</h1>
