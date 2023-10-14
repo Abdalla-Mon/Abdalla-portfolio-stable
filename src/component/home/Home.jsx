@@ -51,6 +51,8 @@ export default function Home() {
               <img
                 src="./landing-imgs/port-img.png"
                 alt="Abdalla Abdelsabour"
+                width={"100%"}
+                height={"100%"}
               />
               <img
                 src="./landing-imgs/port-img.png"
