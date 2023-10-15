@@ -201,7 +201,7 @@ function rootColors(toggle) {
     { var: "--gray-color", lightColor: "#f6f6f6", darkColor: "#f6f6f6" },
     { var: "--body-color", lightColor: "#3c3e41", darkColor: "#c4cfde" },
     { var: "--heading-color", lightColor: "#1e2125", darkColor: "#ffffff" },
-    { var: "--subtitle-color", lightColor: "#f9004d", darkColor: "#f9004d" },
+    { var: "--subtitle-color", lightColor: "#1159b1", darkColor: "#1159b1" },
     { var: "--background-color", lightColor: "#ecf0f3", darkColor: "#212428" },
     {
       var: "--box-shadow",

@@ -109,17 +109,21 @@ function Card({ ele }) {
   const [popup, setPopup] = useState(false);
   return (
     <>
-      {/* {popup ? ( */}
       <motion.div
         className="card-popup fixed"
         initial={{ scale: 0 }}
         animate={popup ? { scale: 1 } : { scale: [0.5, 0] }}
       >
+        <div
+          className="reomve"
+          onClick={() => {
+            setPopup(false);
+          }}
+        ></div>
         <div className="container mx-auto">
           <Popup setPopup={setPopup} ele={ele} />
         </div>
       </motion.div>
-      {/* ) : null} */}
       <div
         className="card"
         onClick={() => {
