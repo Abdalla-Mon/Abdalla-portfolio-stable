@@ -95,7 +95,7 @@ function Text() {
       </p>
       <a
         className="cv"
-        href="https://drive.google.com/file/d/1AGgHjiOP34FsT85DBRoRDLYHP7-55NBk/view"
+        href="https://drive.google.com/file/d/19jB4LhFHM2Zo0P0lyUIrmmBpHRwidRcZ/view"
         title="My cv "
       >
         Download My CV
